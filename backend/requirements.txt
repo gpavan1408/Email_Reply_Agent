@@ -1,0 +1,49 @@
+# Web Framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# AI / LangChain + Azure OpenAI
+langchain==0.2.5
+langchain-openai==0.1.8
+langchain-community==0.2.5
+openai==1.30.1
+
+# Database
+sqlalchemy==2.0.30
+alembic==1.13.1
+aiomysql==0.2.0
+pymysql==1.1.0
+cryptography==42.0.7
+
+# Email - Gmail
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.130.0
+
+# Email - Outlook
+msal==1.28.0
+httpx==0.27.0
+
+# Scheduler
+apscheduler==3.10.4
+
+# Config & Validation
+pydantic==2.7.1
+pydantic-settings==2.3.0
+python-dotenv==1.0.1
+
+# Utilities
+beautifulsoup4==4.12.3
+lxml==5.2.2
+email-validator==2.1.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Logging
+loguru==0.7.2
+
+# Testing
+pytest==8.2.0
+pytest-asyncio==0.23.7

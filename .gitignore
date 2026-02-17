@@ -1,0 +1,49 @@
+# ============================================================
+# Email Reply Agent .gitignore
+# ============================================================
+
+# --- Python virtual environment (NEVER commit this) ---
+.venv/
+venv/
+env/
+
+# --- Python cache files ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Environment secrets (NEVER commit this) ---
+.env
+*.json.token
+gmail_token.json
+outlook_token.json
+credentials.json
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Node / React ---
+node_modules/
+frontend/build/
+frontend/dist/
+
+# --- Docker ---
+mysql_data/
+
+# --- IDE ---
+.idea/
+*.swp
+.DS_Store
+
+# --- Azure ---
+.azure/
+*.pem
+*.ppk
+azure-credentials.json
