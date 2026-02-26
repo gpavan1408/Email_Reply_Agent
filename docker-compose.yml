@@ -20,7 +20,7 @@ services:
     container_name: email_agent_db
     restart: unless-stopped
     env_file:
-      - backend/.env
+      - .env
     ports:
       - "3306:3306"
     volumes:
@@ -41,7 +41,7 @@ services:
     container_name: email_agent_backend
     restart: unless-stopped
     env_file:
-      - backend/.env
+      - .env
     ports:
       - "8000:8000"
     volumes:
