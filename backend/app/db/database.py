@@ -68,8 +68,6 @@ async def get_db():
         except Exception:
             await session.rollback()
             raise
-        finally:
-            await session.close()
 
 
 # ── Startup Check ──
