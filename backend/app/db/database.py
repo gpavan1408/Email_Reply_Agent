@@ -74,11 +74,23 @@ async def get_db():
 async def init_db():
     """
     Called at app startup to verify DB connection works.
+    Retries a few times so we wait for MySQL to be ready (e.g. in Docker).
     Tables are created by Alembic migrations (Phase 2).
     """
-    try:
-        async with engine.begin() as conn:
-            logger.info("✅ MySQL connection established")
-    except Exception as e:
-        logger.error(f"❌ Database connection failed: {e}")
-        raise
+    import asyncio
+
+    max_attempts = 10
+    delay_seconds = 2
+    for attempt in range(1, max_attempts + 1):
+        try:
+            async with engine.begin() as conn:
+                logger.info("✅ MySQL connection established")
+                return
+        except Exception as e:
+            logger.warning(
+                f"Database not ready (attempt {attempt}/{max_attempts}): {e}"
+            )
+            if attempt == max_attempts:
+                logger.error(f"❌ Database connection failed after {max_attempts} attempts")
+                raise
+            await asyncio.sleep(delay_seconds)
